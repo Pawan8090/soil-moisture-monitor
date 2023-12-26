@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soil Moisture Monitor</title>
+  <script>
+    function updateMoisture(moisture) {
+      document.getElementById("moistureValue").innerHTML = "Moisture Level: " + moisture;
+    }
+
+    function getData() {
+      fetch("https://my-json-server.typicode.com/Pawan8090/Test/data")
+        .then(response => response.json())
+        .then(data => updateMoisture(data.moisture));
+    }
+
+    setInterval(getData, 10000); // Update data every 10 seconds
+  </script>
+</head>
+<body>
+  <h1>Soil Moisture Monitor</h1>
+  <p id="moistureValue">Moisture Level: Loading...</p>
+</body>
+</html>
