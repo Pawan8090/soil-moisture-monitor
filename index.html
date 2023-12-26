@@ -10,7 +10,7 @@
     }
 
     function getData() {
-      fetch("https://my-json-server.typicode.com/Pawan8090/Test/data")
+      fetch("https://my-json-server.typicode.com/Pawan8090/soil-moisture-monitor/data")
         .then(response => response.json())
         .then(data => updateMoisture(data.moisture));
     }
